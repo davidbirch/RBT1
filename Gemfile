@@ -45,3 +45,13 @@ gem 'request-log-analyzer'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails', :git => "git://github.com/seyhunak/twitter-bootstrap-rails.git", :branch => "bootstrap3"
+
+# Add testing Framework
+group :test do
+  gem 'capybara'
+end
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+

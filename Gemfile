@@ -55,3 +55,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+# Use the Twitter and Tweetstream API
+gem 'twitter'
+gem 'tweetstream'
+

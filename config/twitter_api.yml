@@ -1,0 +1,14 @@
+# Configuration information for the twitter api
+development:
+  api_key: oW2KDwDdQR7ACFOPOZo5sg
+  api_secret: ZyOprcFLKcDazXkCIQsDH3bWYXx3bXDZSUZdBL51k
+  oauth_access_token: 2354164724-hNZKgWmLTSl6PkaQAX8f8oGyBwWjdHLCW8oaPJU
+  oauth_access_token_secret: btO6zg9dKVNFXuKvJD2gEsHn9pslqyYrcNPT9N6fYv2Dk
+  auth_method: :oauth
+  
+test:
+  api_key: oW2KDwDdQR7ACFOPOZo5sg
+  api_secret: ZyOprcFLKcDazXkCIQsDH3bWYXx3bXDZSUZdBL51k
+  oauth_access_token: 2354164724-hNZKgWmLTSl6PkaQAX8f8oGyBwWjdHLCW8oaPJU
+  oauth_access_token_secret: btO6zg9dKVNFXuKvJD2gEsHn9pslqyYrcNPT9N6fYv2Dk
+  auth_method: :oauth

@@ -7,15 +7,15 @@
         <div class="col-md-9 main_content">
           <h2>New account lookup</h2>
           <%= form_tag("/account_lookups", method: "post") do %>
-            <%= label_tag(:name, "Name") %>
-            <%= text_field_tag("account_lookup[name]") %>
+            <%= label_tag(:screen_name, "Screen Name") %>
+            <%= text_field_tag("account_lookup[screen_name]") %>
             <%= submit_tag("Lookup") %>
           <% end %>
           <hr>
           <p><%= @account_lookup.inspect %></p>
           <hr>
-          <p>Name: <%= @account_lookup.name %></p>
           <p>Screen Name: <%= @account_lookup.screen_name %></p>
+          <p>Name: <%= @account_lookup.name %></p>
           <p>User GUID <%= @account_lookup.user_guid %></p>
           <p>Profile Background Image URL: <%= @account_lookup.profile_background_image_url %></p>
           <p>Followers Count: <%= @account_lookup.followers_count %></p>
@@ -29,7 +29,7 @@
             <ul class="nav nav-list">
               <li><%= link_to "Home", root_path %></li>
               <li><%= link_to "About", about_path %></li>
-              <li><%= link_to "New Account", new_account_lookups_path %></li> 
+              <li><%= link_to "Follow New Account", account_lookups_path %></li> 
             </ul>
           </div>  
         </div>

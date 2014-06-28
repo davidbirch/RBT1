@@ -19,27 +19,22 @@
           <p>User GUID <%= @account_lookup.user_guid %></p>
           <p>Profile Background Image URL: <%= @account_lookup.profile_background_image_url %></p>
           <p>Followers Count: <%= @account_lookup.followers_count %></p>
-          
-            
+          <%= form_tag("/users", method: "post") do %>
+            <%= hidden_field_tag("user[screen_name]", @account_lookup.screen_name) %>
+            <%= hidden_field_tag("user[name]", @account_lookup.name) %>
+            <%= hidden_field_tag("user[user_guid]", @account_lookup.user_guid) %>
+            <%= hidden_field_tag("user[profile_background_image_url]", @account_lookup.profile_background_image_url ) %>
+            <%= hidden_field_tag("user[followers_count]", @account_lookup.followers_count) %>
+            <%= submit_tag("Save") %>
+          <% end %>  
           <hr>
         </div>
         <div class="col-md-3 sidebar">
-          <div class="well sidebar-nav">
-            <h3>Navigation</h3>
-            <ul class="nav nav-list">
-              <li><%= link_to "Home", root_path %></li>
-              <li><%= link_to "About", about_path %></li>
-              <li><%= link_to "Follow New Account", account_lookups_path %></li> 
-            </ul>
-          </div>  
+          <%= render "shared/sidebar_nav" %>
         </div>
         
       </div>
       
       <hr>
-
-      <footer>
-        <p>&copy; Company 2014</p>
-        <%= debug params %>
-      </footer>
+      <%= render "shared/footer" %>
     </div> <!-- /container -->

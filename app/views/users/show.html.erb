@@ -1,0 +1,42 @@
+    <div class="container">
+
+      <%= bootstrap_flash %>
+      
+      <div class="row">
+        
+        <div class="col-md-9 main_content">
+            <strong>Name:</strong>
+            <%= @user.name %>
+          </p>
+          
+          <p>
+            <strong>Screen name:</strong>
+            <%= @user.screen_name %>
+          </p>
+          
+          <p>
+            <strong>User guid:</strong>
+            <%= @user.user_guid %>
+          </p>
+          
+          <p>
+            <strong>Followers count:</strong>
+            <%= @user.followers_count %>
+          </p>
+          
+          <p>
+            <strong>Profile background image url:</strong>
+            <%= @user.profile_background_image_url %>
+          </p>
+          <%= link_to 'Edit', edit_user_path(@user) %>
+        </div>
+        <div class="col-md-3 sidebar">
+          <%= render "shared/sidebar_nav" %>
+        </div>
+        
+      </div>
+      
+      <hr>
+
+      <%= render "shared/footer" %>
+    </div> <!-- /container -->

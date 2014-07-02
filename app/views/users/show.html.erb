@@ -28,6 +28,25 @@
             <strong>Profile background image url:</strong>
             <%= @user.profile_background_image_url %>
           </p>
+          
+          <% unless @user.keyword.nil? %>
+          
+            <p>
+              <strong>>> Keyword Value:</strong>
+              <%= @user.keyword.keyword_value %>
+            </p>
+            
+          <% end %>
+          
+          <% unless @user.filter.nil? %>
+          
+            <p>
+              <strong>>> Filter Value:</strong>
+              <%= @user.filter.filter_value %>
+            </p>
+            
+          <% end %>
+           
           <%= link_to 'Edit', edit_user_path(@user) %>
         </div>
         <div class="col-md-3 sidebar">

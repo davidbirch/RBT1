@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   
   resources :account_lookups, only: [:index, :create]
   resources :users
+  resources :keywords
+  resources :filters
 
 end

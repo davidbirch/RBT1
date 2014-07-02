@@ -65,7 +65,7 @@ RSpec.describe UsersController, :type => :controller do
       end
     end
 
-    describe "with invalid attributes" do
+    describe "with invalid params" do
       it "does not save the new user" do
         pending "placeholder for invalid attributes"
         fail

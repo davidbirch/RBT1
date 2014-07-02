@@ -41,12 +41,18 @@ gem 'spring',        group: :development
 # Use request-log-analyzer
 gem 'request-log-analyzer'
 
+# Add Better Errors
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
 # Use Twitter Bootstrap
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails', :git => "git://github.com/seyhunak/twitter-bootstrap-rails.git", :branch => "bootstrap3"
 
-# Add testing Framework
+# Add Testing Framework
 group :test do
   gem 'capybara'
 end

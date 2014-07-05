@@ -55,6 +55,7 @@ gem 'twitter-bootstrap-rails', :git => "git://github.com/seyhunak/twitter-bootst
 # Add Testing Framework
 group :test do
   gem 'capybara'
+  gem 'shoulda-matchers', require: false
 end
 group :development, :test do
   gem 'rspec-rails'

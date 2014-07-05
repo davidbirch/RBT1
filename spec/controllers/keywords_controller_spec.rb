@@ -66,15 +66,17 @@ RSpec.describe KeywordsController, :type => :controller do
     end
 
     describe "with invalid params" do
+      before :each do
+        post :create, {keyword: FactoryGirl.attributes_for(:keyword, keyword_value: nil)}
+      end
+     
       it "does not save the new keyword" do
-        pending "placeholder for invalid attributes"
-        fail
+        expect(Keyword.count).to eq(0)
       end
       
       it "re-renders the new method" do
-        pending "placeholder for invalid attributes"
-        fail
-      end 
+        expect(response).to render_template("keywords/new")
+      end
     end
   end
 
@@ -100,14 +102,18 @@ RSpec.describe KeywordsController, :type => :controller do
     end
 
     describe "with invalid params" do
-      it "assigns the user as keyword" do
-        pending "placeholder for invalid attributes"
-        fail
+      before :each do
+        @keyword = FactoryGirl.create(:keyword)
+        put :update, {:id => @keyword.to_param, :keyword => {:keyword_value => nil}}
+        @keyword.reload        
+      end
+      
+      it "assigns the keyword as @keyword" do
+        expect(assigns(:keyword)).to eq(@keyword)
       end
 
       it "re-renders the 'edit' template" do
-        pending "placeholder for invalid attributes"
-        fail
+        expect(response).to render_template("keywords/edit")
       end
     end
   end

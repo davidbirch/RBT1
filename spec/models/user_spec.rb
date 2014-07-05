@@ -6,6 +6,18 @@ RSpec.describe User, :type => :model do
     expect(FactoryGirl.create(:user)).to be_valid
   end
   
+  it "has one keyword" do
+    expect(FactoryGirl.create(:user)).to have_one(:keyword) 
+  end
+  
+  it "has one filter" do
+    expect(FactoryGirl.create(:user)).to have_one(:filter) 
+  end
+  
+  it "validates presence of :screen_name" do
+    expect(FactoryGirl.create(:user)).to validate_presence_of :screen_name
+  end
+  
   it "assigns the keyword on creation" do
     user = FactoryGirl.create(:user)
     keyword = user.keyword

@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_one :keyword, dependent: :destroy
   has_one :filter, dependent: :destroy
   
+  validates :screen_name, presence: true
+  
   after_save :assign_keyword
   after_save :assign_filter
   

@@ -66,15 +66,17 @@ RSpec.describe UsersController, :type => :controller do
     end
 
     describe "with invalid params" do
+      before :each do
+        post :create, {user: FactoryGirl.attributes_for(:user, screen_name: nil)}
+      end
+     
       it "does not save the new user" do
-        pending "placeholder for invalid attributes"
-        fail
+        expect(User.count).to eq(0)
       end
       
       it "re-renders the new method" do
-        pending "placeholder for invalid attributes"
-        fail
-      end 
+        expect(response).to render_template("users/new")
+      end       
     end
   end
 
@@ -100,14 +102,18 @@ RSpec.describe UsersController, :type => :controller do
     end
 
     describe "with invalid params" do
+      before :each do
+        @user = FactoryGirl.create(:user)
+        put :update, {:id => @user.to_param, :user => {:screen_name => nil}}
+        @user.reload        
+      end
+      
       it "assigns the user as @user" do
-        pending "placeholder for invalid attributes"
-        fail
+        expect(assigns(:user)).to eq(@user)
       end
 
       it "re-renders the 'edit' template" do
-        pending "placeholder for invalid attributes"
-        fail
+        expect(response).to render_template("users/edit")
       end
     end
   end

@@ -66,14 +66,16 @@ RSpec.describe FiltersController, :type => :controller do
     end
 
     describe "with invalid params" do
-      it "does not save the new user" do
-        pending "placeholder for invalid attributes"
-        fail
+      before :each do
+        post :create, {filter: FactoryGirl.attributes_for(:filter, filter_value: nil)}
+      end
+     
+      it "does not save the new filter" do
+        expect(Filter.count).to eq(0)
       end
       
       it "re-renders the new method" do
-        pending "placeholder for invalid attributes"
-        fail
+        expect(response).to render_template("filters/new")
       end 
     end
   end
@@ -100,14 +102,18 @@ RSpec.describe FiltersController, :type => :controller do
     end
 
     describe "with invalid params" do
+      before :each do
+        @filter = FactoryGirl.create(:filter)
+        put :update, {:id => @filter.to_param, :filter => {:filter_value => nil}}
+        @filter.reload        
+      end
+      
       it "assigns the filter as @filter" do
-        pending "placeholder for invalid attributes"
-        fail
+        expect(assigns(:filter)).to eq(@filter)
       end
 
       it "re-renders the 'edit' template" do
-        pending "placeholder for invalid attributes"
-        fail
+        expect(response).to render_template("filters/edit")
       end
     end
   end

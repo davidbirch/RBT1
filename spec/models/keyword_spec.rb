@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe Keyword, :type => :model do
   
   it "has a valid factory" do
-    expect(FactoryGirl.create(:keyword)).to be_valid
+    expect(FactoryGirl.build(:keyword)).to be_valid
   end
   
   it "belongs to a user" do
-    expect(FactoryGirl.create(:keyword)).to belong_to(:user) 
+    expect(FactoryGirl.build(:keyword)).to belong_to(:user) 
   end
   
   it "validates presence of :keyword_value" do
-    expect(FactoryGirl.create(:keyword)).to validate_presence_of :keyword_value
+    expect(FactoryGirl.build(:keyword)).to validate_presence_of :keyword_value
   end
      
   it "can be created without a user" do

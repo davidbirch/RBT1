@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe Filter, :type => :model do
   
   it "has a valid factory" do
-    expect(FactoryGirl.create(:filter)).to be_valid
+    expect(FactoryGirl.build(:filter)).to be_valid
   end
  
   it "belongs to a user" do
-    expect(FactoryGirl.create(:filter)).to belong_to(:user) 
+    expect(FactoryGirl.build(:filter)).to belong_to(:user) 
   end
   
   it "validates presence of :filter_value" do
-    expect(FactoryGirl.create(:filter)).to validate_presence_of :filter_value
+    expect(FactoryGirl.build(:filter)).to validate_presence_of :filter_value
   end
   
   it "can be created without a user" do

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, :type => :model do
   
   it "has a valid factory" do
-    expect(FactoryGirl.create(:user)).to be_valid
+    expect(FactoryGirl.build(:user)).to be_valid
   end
   
   it "has one keyword" do
@@ -15,7 +15,7 @@ RSpec.describe User, :type => :model do
   end
   
   it "validates presence of :screen_name" do
-    expect(FactoryGirl.create(:user)).to validate_presence_of :screen_name
+    expect(FactoryGirl.build(:user)).to validate_presence_of :screen_name
   end
   
   it "assigns the keyword on creation" do
